@@ -1,1 +1,1 @@
-# COMP345_projeect
+# COMP345_project
