@@ -28,30 +28,6 @@ Graph *createGraph(int);
 void addEdge(Graph*,int,int);
 void printGraph(Graph*);
 
-int main(){
-//create a new graph
-    int totalVertices=4;
-    Graph *graph;
-    graph=createGraph(totalVertices);
-    //connect edges
-    addEdge(graph,0,1);
-    addEdge(graph,0,2);
-    addEdge(graph,0,3);
-    addEdge(graph,1,3);
-    addEdge(graph,2,3);
-    /*
-    addEdge(graph,0,1);
-    addEdge(graph,0,4);
-    addEdge(graph,1,2);
-    addEdge(graph,1,3);
-    addEdge(graph,1,4);
-    addEdge(graph,2,3);
-    addEdge(graph,3,4);
-    */
-    //print the adjacency list representation of graph
-    printGraph(graph);
-}
-
 //create a new node
 AdjListNode* newAdjListNode(int data){
     AdjListNode *nptr=new AdjListNode;
@@ -62,6 +38,7 @@ AdjListNode* newAdjListNode(int data){
 
 //function to create a graph of V - vertices
 Graph* createGraph(int V){
+
     Graph *graph=new Graph;
     graph->V=V;
     //create an array of adjacency list. size of array - V
@@ -84,19 +61,4 @@ void addEdge(Graph *graph,int src,int dest){
     nptr=newAdjListNode(src);
     nptr->next=graph->arr[dest].head;
     graph->arr[dest].head=nptr;
-}
-
-//function to print the graph
-void printGraph(Graph* graph){
-//loop over each adjacent list
-    for(int i=0;i<graph->V;i++){
-        AdjListNode *root=graph->arr[i].head;
-        cout<<"Adjacency list of vertex "<<i<<endl;
-        //loop over each node in list
-        while(root!=NULL){
-            cout<<root->data<<" -> ";
-            root=root->next;
-        }
-        cout<<endl;
-    }
 }
