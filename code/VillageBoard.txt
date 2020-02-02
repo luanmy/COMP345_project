@@ -1,0 +1,33 @@
+[borders]
+;the first number is the number of the tile  and the other numbers that follow are what tiles that tile is adjacent too
+
+11 null 12 21 null 1
+21 11 22 31 null 1
+31 21 32 41 null 1
+41 31 42 51 null 1
+51 41 52 null null 1
+12 null 13 22 11 2
+22 12 23 32 21 2
+32 22 33 42 31 2
+42 32 43 52 41 2
+52 42 53 null 51 2
+13 null 14 23 12 3
+23 13 24 33 22 3
+33 23 34 43 32 3
+43 33 44 53 42 3 
+53 43 54 null 52 3
+14 null 15 24 13 4
+24 14 25 34 23 4
+34 24 35 44 33 4
+44 34 45 54 43 4
+54 44 55 null 53 4
+15 null null 25 14 5 
+25 15 26 35 24 5
+35 25 36 45 34 5
+45 35 46 55 44 5
+55 45 56 null 54 5 
+16 null null 26 15 6
+26 16 null 36 25 6
+36 26 null 46 35 6
+46 36 null 56 45 6
+56 46 null null 55 6
