@@ -3,3 +3,5 @@
 //
 
 #include "GBMap.h"
+#include <boost/graph/adjacency_list.hpp>
+
