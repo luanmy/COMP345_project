@@ -1,14 +1,45 @@
 //
-// Created by Kunming Yang on 2020-01-22.
+// Created by Meiyi Luan on 2020-02-09.
 //
+#include <iostream>;
+#include <vector>;
+#ifndef COMP_345_PLAYER_H
+#define COMP_345_PLAYER_H
+using namespace std;
+class Player{
+    private:
+        string* name;
+        VGB* vgb;
+        std::vector <Tile*> *tiles;
+        vector <Building*> *buildings;
+        ResourceMarker* rms [4];
+        RescourcesGather* rg;
+        BSF* bsf;
+        int* order;
 
-#ifndef PROJECT_PLAYER_H
-#define PROJECT_PLAYER_H
+    public:
+        //default constructor
+        Player();
+        //constructor
+        Player(string* name,int* order);
+        //destructor
+        ~Player();
 
+        //show tiles
+        string showTiles();
+        //show buildings
+        string showBuildings();
+        // show resource markers
+        string showResourceMarkers();
 
-class Player {
+        //fuctions on moodle
+        bool PlaceHarvestTile(Tile* tile);
+        void DrawBuilding();
+        Tile* DrawHarvestTile();
+        string ResourcesTracker();
+        bool BuildingVillage();
+        int [] CalculateResoureces();
+
 
 };
-
-
-#endif //PROJECT_PLAYER_H
+#endif //COMP_345_PLAYER_H
